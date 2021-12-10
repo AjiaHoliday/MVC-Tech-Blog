@@ -1,6 +1,4 @@
 const router = require('express').Router();
-const { BLOCK_TYPES } = require('@babel/types');
-const { defaultValueSchemable } = require('sequelize/dist/lib/utils');
 const {User, Blog, Comment} = require('../../models');
 
 // GET all blogs
@@ -9,14 +7,14 @@ router.get('/', (req, res)=> {
         attributes: ['id', 'title', 'blog_content', 'created_at'],
         order: [['created_at', 'DESC']],
         include: [
-            // {
-            //     model: Comment,
-            //     attributes:['id','comment_text', 'blog_id', 'user_id', 'created_at'],
-            //     include: {
-            //         model: User,
-            //         attributes: ['username']
-            //     }
-            // },
+            {
+                model: Comment,
+                attributes:['id','comment_text', 'blog_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
             {
                 model: User,
                 attributes: ['username']
@@ -43,14 +41,14 @@ router.get('/:id', (req, res) => {
         },
         attributes: ['id', 'title', 'blog_content', 'created_at'],
         include: [
-            // {
-            //     model: Comment,
-            //     attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
-            //     include: {
-            //         model: User,
-            //         attributes: ['username']
-            //     }
-            // },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
             {
                 model: User,
                 attributes: ['username']
