@@ -15,13 +15,17 @@ Blog.init (
             type: DataTypes.STRING,
             allowNull: false
         },
+        blog_content: {
+            type: DataTypes.STRING(1000),
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
-        },
+        }
     },
     {
         sequelize,

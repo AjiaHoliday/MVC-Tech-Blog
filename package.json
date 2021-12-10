@@ -17,7 +17,9 @@
     "jest": "^27.4.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,5 @@
   "bugs": {
     "url": "https://github.com/AjiaHoliday/MVC-Tech-Blog/issues"
   },
-  "homepage": "https://github.com/AjiaHoliday/MVC-Tech-Blog#readme",
-  "start": "node server.js"
+  "homepage": "https://github.com/AjiaHoliday/MVC-Tech-Blog#readme"  
 }
