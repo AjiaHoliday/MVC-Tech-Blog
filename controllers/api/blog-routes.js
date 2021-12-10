@@ -21,12 +21,10 @@ router.get('/', (req, res)=> {
             }
         ]
     })
-        .then(dbBlogData => res.json(dbBlogData)
-        //     {
-        //     const blogs = dbBlogData.map(blog => blog.get({ plain: true }));
-        //     res.render('homepage', {blogs});        
-        // }
-        )
+        .then(dbBlogData => {
+            const blogs = dbBlogData.map(blog => blog.get({ plain: true }));
+            res.render('homepage', {blogs});        
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
