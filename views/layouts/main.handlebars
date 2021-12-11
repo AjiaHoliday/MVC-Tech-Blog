@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Speak</title>
+  <title>Speak Techy to Me</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -14,17 +14,17 @@
   <div class="wrapper">
     <header>
       <h1 class = "has-text-black p-3 has-text-weight-bold">
-        speak tech to me
+        speak techy to me
       </h1>
       <nav class= "navbar mt-2">
-        {{#if loggedIn}}
+        {{!-- {{#if loggedIn}} --}}
         <a href="/" class= "navbar-item is-hoverable pt-1">homepage</a>
         <a href="/dashboard" class= "navbar-item is-hoverable pt-1 mr-4">dashboard</a>
         <button id="logout" class="button is-danger">logout</button>
-        {{else}}
+        {{!-- {{else}} --}}
         <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
         <a href="/login" class="button is-primary">login</a>
-        {{/if}}
+        {{!-- {{/if}} --}}
     
       </nav>
     </header>
@@ -35,15 +35,16 @@
 
     <footer class="footer rows pb-2">
       <div class="row-is-full content has-text-centered">
-        <p>
+  
           <a href="/">homepage</a>
-          {{#if loggedIn}} |
+          {{!-- {{#if loggedIn}} | --}}
           <a href="/dashboard/">dashboard</a> |
-          <a href="/dashboard/create/">post new blog</a>
-          {{else}}
+          <a href="/dashboard/create/">create blog</a>|
+          <button id="logout" class="btn-no-style">logout</button>
+          {{!-- {{else}} --}}
           | <a href="/login/">login</a>
-          {{/if}}
-        </p>
+          {{!-- {{/if}} --}}
+        
       </div>
       <div class="row-is-full content has-text-centered">
         <p>
@@ -54,9 +55,9 @@
     </footer>
   </div>
 
-  {{#if loggedIn}}
+  {{!-- {{#if loggedIn}} --}}
   <script src="/javascript/logout.js"></script>
-  {{/if}}
+  {{!-- {{/if}} --}}
 </body>
 
 </html>
