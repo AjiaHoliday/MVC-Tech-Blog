@@ -17,14 +17,14 @@
         speak techy to me
       </h1>
       <nav class= "navbar mt-2">
-        {{!-- {{#if loggedIn}} --}}
+        {{#if loggedIn}}
         <a href="/" class= "navbar-item is-hoverable pt-1">homepage</a>
         <a href="/dashboard" class= "navbar-item is-hoverable pt-1 mr-4">dashboard</a>
         <button id="logout" class="button is-danger">logout</button>
-        {{!-- {{else}} --}}
+        {{else}}
         <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
         <a href="/login" class="button is-primary">login</a>
-        {{!-- {{/if}} --}}
+        {{/if}}
     
       </nav>
     </header>
@@ -37,13 +37,13 @@
       <div class="row-is-full content has-text-centered">
   
           <a href="/">homepage</a>
-          {{!-- {{#if loggedIn}} | --}}
+          {{#if loggedIn}} |
           <a href="/dashboard/">dashboard</a> |
           <a href="/dashboard/create/">create blog</a>|
           <button id="logout" class="btn-no-style">logout</button>
-          {{!-- {{else}} --}}
+          {{else}}
           | <a href="/login/">login</a>
-          {{!-- {{/if}} --}}
+          {{/if}}
         
       </div>
       <div class="row-is-full content has-text-centered">
@@ -55,9 +55,9 @@
     </footer>
   </div>
 
-  {{!-- {{#if loggedIn}} --}}
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
-  {{!-- {{/if}} --}}
+  {{/if}}
 </body>
 
 </html>
