@@ -22,8 +22,7 @@
   "scripts": {
     "test": "jest",
     "start": "node server.js",
-    "seed": "node seeds/index.js",
-    "build": "webpack"
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
