@@ -25,7 +25,10 @@ router.get('/', (req, res) => {
     })
         .then(dbBlogData => {
             const blogs = dbBlogData.map(blog => blog.get({plain: true}));
-            res.render('homepage', {blogs});
+            res.render('homepage', {
+                blogs,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
@@ -39,6 +42,14 @@ router.get('/login', (req,res) => {
         return;
     }
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
 });
 
 router.get('/blog/:id', (req,res) => {

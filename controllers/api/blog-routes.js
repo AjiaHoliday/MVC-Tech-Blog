@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User, Blog, Comment} = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET all blogs
 router.get('/', (req, res)=> {
@@ -67,11 +68,11 @@ router.get('/:id', (req, res) => {
 });
 
 // POST new blog
-router.post('/',(req, res) => {
+router.post('/', withAuth, (req, res) => {
     Blog.create({
         title: req.body.title,
         blog_content: req.body.blog_content,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbBlogData => res.json(dbBlogData))
         .catch(err => {
@@ -81,7 +82,7 @@ router.post('/',(req, res) => {
 });
 
 // update blog
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Blog.update(
         {
             title: req.body.title,
@@ -107,7 +108,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete blog
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Blog.destroy({
         where:{
             id: req.params.id

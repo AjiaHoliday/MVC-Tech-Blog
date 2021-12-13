@@ -17,12 +17,13 @@
         speak techy to me
       </h1>
       <nav class= "navbar mt-2">
-        {{#if loggedIn}}
+        
         <a href="/" class= "navbar-item is-hoverable pt-1">homepage</a>
-        <a href="/dashboard" class= "navbar-item is-hoverable pt-1 mr-4">dashboard</a>
+        {{#if loggedIn}}
+        <a href="/dashboard" class= "navbar-item is-hoverable pt-1">dashboard</a>
+        <a href="/dashboard/create/" class= "navbar-item is-hoverable pt-1 mr-4">create blog</a>
         <button id="logout" class="button is-danger">logout</button>
         {{else}}
-        <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
         <a href="/login" class="button is-primary">login</a>
         {{/if}}
     
@@ -48,7 +49,7 @@
       </div>
       <div class="row-is-full content has-text-centered">
         <p>
-          <strong>speak tech to me</strong> by <a href="https://github.com/ajiaholiday">Ajia Holiday</a> | made with <a href="https://bulma.io/">bulma</a> |
+          <strong>speak techy to me</strong> by <a href="https://github.com/ajiaholiday">Ajia Holiday</a> | made with <a href="https://bulma.io/">bulma</a> |
           source code: <a href="https://github.com/ajiaholiday/MVC-Tech-Blog"><i class="fab fa-github"></i></a>
         </p>
       </div>
@@ -57,6 +58,20 @@
 
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+
+  {{!-- logout timer modal --}}
+  <div class = "modal" id="timeoutWarning">
+    <div class = "modal-background"></div>
+    <div class = "modal-content">
+      <div class = "box">
+        Your session will timeout in {{timeoutNow}} seconds. 'Cancel' to resume session.
+        <br>
+        <button class="button" id="warningBtn">cancel</button>
+        <button class = "modal-close is-large is-right" aria-label = "close"></button>
+      </div>
+    </div>
+  </div>
+
   {{/if}}
 </body>
 
