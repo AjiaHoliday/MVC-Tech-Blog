@@ -7,7 +7,9 @@
   <title>Speak Techy to Me</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
   <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 </head>
 
 <body>
@@ -57,21 +59,22 @@
   </div>
 
   {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
+  
 
   {{!-- logout timer modal --}}
-  <div class = "modal" id="timeoutWarning">
+  <div class = "modal " id="timeoutWarning">
     <div class = "modal-background"></div>
     <div class = "modal-content">
       <div class = "box">
-        Your session will timeout in {{timeoutNow}} seconds. 'Cancel' to resume session.
+        Your session will timeout soon due to inactivity.
         <br>
-        <button class="button" id="warningBtn">cancel</button>
         <button class = "modal-close is-large is-right" aria-label = "close"></button>
       </div>
     </div>
   </div>
 
+  <script src="/javascript/logout.js"></script>
+  <script src="/javascript/timeout.js"></script>
   {{/if}}
 </body>
 
