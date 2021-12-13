@@ -8,6 +8,7 @@
     "express-session": "^1.17.2",
     "jquery": "^3.6.0",
     "mysql2": "^2.3.3",
+    "node": "^17.2.0",
     "sequelize": "^6.12.0-alpha.1"
   },
   "name": "mvc-tech-blog",
@@ -21,7 +22,8 @@
   "scripts": {
     "test": "jest",
     "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
