@@ -14,9 +14,6 @@ async function signupFormHandler(event) {
             password
         }),
         headers: { 'Content-Type': 'application/json' }
-        }).catch(err => {
-            console.log(err);
-            res.status(500).json(err);
         });
 
         // check the response status

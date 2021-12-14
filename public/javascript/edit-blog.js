@@ -16,9 +16,6 @@ async function editFormHandler(event) {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
     });
 
     if (response.ok) {
