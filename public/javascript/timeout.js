@@ -1,18 +1,18 @@
 async function logout() {
-  try {  
-    const response = await fetch('/api/users/logout', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' }
-    });
+  const response = await fetch('/api/users/logout', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' }
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert(response.statusText);
-    }
-  } catch(err) {
-    console.error(err);
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert(response.statusText);
   }
+
 }
 // logout timer
 function showWarning() {
