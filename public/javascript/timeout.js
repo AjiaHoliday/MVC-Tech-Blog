@@ -1,14 +1,18 @@
 async function logout() {
+  try {  
     const response = await fetch('/api/users/logout', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }
     });
-  
+
     if (response.ok) {
       document.location.reload();
     } else {
       alert(response.statusText);
     }
+  } catch(err) {
+    console.error(err);
+  }
 }
 // logout timer
 function showWarning() {
